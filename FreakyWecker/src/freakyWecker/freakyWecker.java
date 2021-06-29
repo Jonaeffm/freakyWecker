@@ -1,6 +1,5 @@
 package freakyWecker;
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -31,41 +30,10 @@ public class freakyWecker {
 static boolean firstTime;
 	*/
 	//are the current time and one of the alarm clocks the same?
-	public static boolean checkTime()
-	{
-		try
-		{
-			for(varContainer.i=0;varContainer.i<varContainer.savVar.sizeOfEndTimes();varContainer.i++)
-			{
-				if(getTimer(varContainer.i)==(long)0)
-				{
-			
-					//saveSettings.deleteEndTime(i);
-					//return true
-					return(true);
-				}
-				//else
-					//return(false);
-			}
-			
-		}
-		catch (Exception e)
-		{
-			return(false);
-		}
-		//else false
-		return false;
-	}
 	
-	//alarm clock time minus current time = ?
-	public static long getTimer(int i)
-	{
-		long time;
-		
-		
-			time = varContainer.savVar.getEndTime(i) - System.currentTimeMillis()/1000;
-		return time;
-	}
+	
+	
+	
 	
 	/*public long getTime(saveSettings savVar)
 	{
@@ -75,17 +43,10 @@ static boolean firstTime;
 	}*/
 	
 	//terminal output
-	public static String printTime()
-	{		
-		long yourmilliseconds = System.currentTimeMillis();
-		SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm:ss");    
-		Date resultdate = new Date(yourmilliseconds);
-		return(sdf.format(resultdate));
-
-	}
+	
 	
 	//unused
-	public static void updateTime()
+	/*public static void updateTime()
 	{
 		try
 		{
@@ -121,7 +82,7 @@ static boolean firstTime;
 		{
 			System.out.println("Exception in Thread Sleep :"+e);
 		}
-	}
+	}*/
 	
 	
 	
@@ -272,46 +233,6 @@ static boolean firstTime;
 		
 	}
 
-	//import external jar for this function https://github.com/rcasanovan/JMusic
-	@SuppressWarnings("deprecation")
-	public static void playTheSong() 
-	{
-		if (varContainer.firstTime == true)
-		{
-			varContainer.firstTime=false;
-			JMusicPlayerList list = new JMusicPlayerList();
-		
-		
-		
-			String DNAME = "play";
-			JMusicSong song = new JMusicSong(1, DNAME, "", "", "");
 
-
-			list.addSongToPlayerList(song);
-		
-
-			MusicPlayerControl.initMusicPlayer("/root/eclipse-workspace/FreakyWecker/src/freakyWecker");
-		
-		
-			MusicPlayerControl.loadSongs(list);
-		}
-		
-		MusicPlayerControl.playSong();
-		
-		System.out.println("Press Enter key to continue...");
-	   
-		Scanner sc = new Scanner(System.in);
-		sc.next();
-		
-	    MusicPlayerControl.stopSong();
-	    
-	  
-		//System.exit(0);
-		
-        
-        
-		
-	}
-	
 
 }
