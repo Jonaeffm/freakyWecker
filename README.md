@@ -1,0 +1,2 @@
+# freakyWecker
+alarm clock (terminal)
