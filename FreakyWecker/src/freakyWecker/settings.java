@@ -13,11 +13,15 @@ import java.util.TimeZone;
 
 public class settings {
 	public saveSettings savVar;
- public settings(saveSettings savVar1)
+ 
+	//constructor
+	public settings(saveSettings savVar1)
  {
 		savVar = savVar1;
 		//System.out.println("Test größe: "+savVar.sizeOfEndTimes());
  }
+	
+	//delete alarm clock
 void weckerEntfernen()
 {
 	if(savVar.sizeOfEndTimes()>0)
@@ -36,7 +40,9 @@ void weckerEntfernen()
 		System.out.println("Keine Wecker eingestellt.");
 	}
 }
- void weckerHinzufuegen()
+ 
+//add alarm clock
+void weckerHinzufuegen()
 	{
 		System.out.println("Test größe: "+savVar.sizeOfEndTimes());
 		for (int i = 0;i<savVar.sizeOfEndTimes();i++)
@@ -178,7 +184,8 @@ void weckerEntfernen()
 		
 	}
 	
-	public saveSettings runSettings()
+//settings	
+public saveSettings runSettings()
 	{
 		
 		

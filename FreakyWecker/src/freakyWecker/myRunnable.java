@@ -17,12 +17,12 @@ public class myRunnable implements Runnable {
 		else
 			return false;
 	}
-	
+	//get minutes
 	public static int getCurrentMinutes()
 	{
 		return(int)(System.currentTimeMillis()/1000/60)%60;
 	}
-
+// get minutes of alarm clock
 	public static int getMinutes(int i)
 	{
 		int time;
@@ -33,7 +33,7 @@ public class myRunnable implements Runnable {
 		return time;
 	}
 	
-	
+	//time between current time and alarm clocks
 	public static long getTimer(int i)
 	{
 		long time;
@@ -89,6 +89,7 @@ public class myRunnable implements Runnable {
 		
 	}
 	
+	//alarm clock on?
 	public static boolean checkTime()
 	{
 		try
@@ -118,6 +119,7 @@ public class myRunnable implements Runnable {
 		return false;
 	}
 	
+	//terminal output
 	public static String printTime()
 	{		
 		long yourmilliseconds = System.currentTimeMillis();
@@ -127,6 +129,8 @@ public class myRunnable implements Runnable {
 
 	}
 	
+	
+	//run the thread here
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub

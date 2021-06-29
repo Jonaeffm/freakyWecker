@@ -5,9 +5,12 @@ import java.util.List;
 
 public class saveSettings {
 	//private static long startTime;
+	//times of the alarm clocks
 	private static List<Long> endTimes;
+	//names of the alerm clocks
 	private static List<String> nameOfWecker;
 	
+	//constructor
 	public saveSettings()
 	{
 	
@@ -15,6 +18,8 @@ public class saveSettings {
 		endTimes=new ArrayList<Long>();
 		 nameOfWecker = new ArrayList<String>();
 		}
+	
+	
 	
 	public long getEndTime(int value) {
 		return endTimes.get(value);

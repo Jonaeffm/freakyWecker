@@ -22,6 +22,7 @@ import jmusic.MusicPlayerControl;
 
 public class freakyWecker {
 
+	//the thread in which the clock runs
 	static Thread test ;
 	
 	
@@ -29,6 +30,7 @@ public class freakyWecker {
 	static saveSettings savVar;
 static boolean firstTime;
 	*/
+	//are the current time and one of the alarm clocks the same?
 	public static boolean checkTime()
 	{
 		try
@@ -39,6 +41,7 @@ static boolean firstTime;
 				{
 			
 					//saveSettings.deleteEndTime(i);
+					//return true
 					return(true);
 				}
 				//else
@@ -50,9 +53,11 @@ static boolean firstTime;
 		{
 			return(false);
 		}
+		//else false
 		return false;
 	}
 	
+	//alarm clock time minus current time = ?
 	public static long getTimer(int i)
 	{
 		long time;
@@ -69,6 +74,7 @@ static boolean firstTime;
 		return time;
 	}*/
 	
+	//terminal output
 	public static String printTime()
 	{		
 		long yourmilliseconds = System.currentTimeMillis();
@@ -78,6 +84,7 @@ static boolean firstTime;
 
 	}
 	
+	//unused
 	public static void updateTime()
 	{
 		try
@@ -121,7 +128,7 @@ static boolean firstTime;
 
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException, XMLStreamException {
-
+		//load saved data
 		varContainer.savVar= new saveSettings();
 		XMLReadWrite parser = new XMLReadWrite();
 		varContainer.savVar = parser.readXML(); 
@@ -130,7 +137,7 @@ static boolean firstTime;
 		//savVar = new saveSettings();
 		varContainer.firstTime=true;
 		// TODO Auto-generated method stub
-		
+		//Main menu
 		while (true)
 		{
 			
@@ -211,6 +218,7 @@ static boolean firstTime;
 		    			
 		    		}
 		    		//System.out.println("Test größe: "+varContainer.savVar.sizeOfEndTimes());
+		    		//save changes
 		    		for (int i = 0;i<varContainer.savVar.sizeOfEndTimes();i++)
 		    		{
 		    			long yourmilliseconds = varContainer.savVar.getEndTime(i);
@@ -264,7 +272,7 @@ static boolean firstTime;
 		
 	}
 
-	
+	//import external jar for this function https://github.com/rcasanovan/JMusic
 	@SuppressWarnings("deprecation")
 	public static void playTheSong() 
 	{
