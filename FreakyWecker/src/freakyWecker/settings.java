@@ -108,6 +108,12 @@ void weckerHinzufuegen()
 		
 		
 		long stunden1 = epoch/(60*60*1000);
+		
+		if(varContainer.winterSummer)
+			stunden1=stunden1+3;
+		else
+			stunden1=stunden1+2;
+		
 		long minuten1 = (epoch%(60*60*1000))/(60*1000);
 		long sekunden1=(epoch%(60*1000))/1000;
 
@@ -216,8 +222,8 @@ public saveSettings runSettings()
 		
 		
 		//savVar = new saveSettings();
-		System.out.println("Test größe im Menu: "+savVar.sizeOfEndTimes());
-		System.out.println();
+		//System.out.println("Test größe im Menu: "+savVar.sizeOfEndTimes());
+		//System.out.println();
 		System.out.println("Optionen");
 		System.out.println();
 		System.out.println("1. Wecker hinzufügen");

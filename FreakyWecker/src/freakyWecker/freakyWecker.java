@@ -97,6 +97,20 @@ static boolean firstTime;
 		settings useSettings = new settings(varContainer.savVar);
 		//savVar = new saveSettings();
 		varContainer.firstTime=true;
+		
+		System.out.println("1. Winterzeit");
+		System.out.println("2. Sommerzeit");
+		Scanner sc = new Scanner(System.in);
+		String eingabe = sc.next();
+		switch (eingabe)
+	    {
+	    	case "1":
+	    		varContainer.winterSummer = true;
+	    		break;
+	    	case "2":
+	    		varContainer.winterSummer = false;
+	    		break;
+	    }
 		// TODO Auto-generated method stub
 		//Main menu
 		while (true)
@@ -111,8 +125,8 @@ static boolean firstTime;
 			System.out.println("Hauptmenü");
 		    System.out.println("Wahl: ");
 		 
-		    Scanner sc = new Scanner(System.in);
-		    String eingabe = sc.next();
+		    sc = new Scanner(System.in);
+		    eingabe = sc.next();
 		    switch (eingabe)
 		    {
 		    	case "1":
