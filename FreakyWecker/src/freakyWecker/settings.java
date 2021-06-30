@@ -20,6 +20,23 @@ public class settings {
 		savVar = savVar1;
 		//System.out.println("Test größe: "+savVar.sizeOfEndTimes());
  }
+
+	void weckerAnzeigen()
+	{
+		if(savVar.sizeOfEndTimes()>0)
+		{
+			for(int i = 0; i<savVar.sizeOfEndTimes();i++)
+			{
+				System.out.println(Integer.toString(i)+". "+savVar.getNameOfWecker(i));
+			}
+			Scanner sc0 = new Scanner(System.in);
+			String eingabe0 = sc0.next();
+		}
+		else
+		{
+			System.out.println("Keine Wecker eingestellt.");
+		}
+	}
 	
 	//delete alarm clock
 void weckerEntfernen()
@@ -33,7 +50,12 @@ void weckerEntfernen()
 	Scanner sc0 = new Scanner(System.in);
 	String eingabe0 = sc0.next();
 	//System.out.println("Eingabe Wert: "+eingabe0);
-	savVar.deleteEndTime(Integer.parseInt(eingabe0));
+	if(Integer.parseInt(eingabe0)<savVar.sizeOfEndTimes())
+	{	
+		savVar.deleteEndTime(Integer.parseInt(eingabe0));
+	}
+	else
+		System.out.println("Nummer nicht vorhanden");
 	}
 	else
 	{
@@ -197,6 +219,7 @@ public saveSettings runSettings()
 		System.out.println("1. Wecker hinzufügen");
 		System.out.println("2. Wecker entfernen");
 		System.out.println("3. Pfad und Dateiname der MP3");
+		System.out.println("4. Wecker anzeigen");
 	
 		System.out.println("5. zurück");
 		while (true)
@@ -217,6 +240,7 @@ public saveSettings runSettings()
 		    		
 		    		break;
 		    	case "4":
+		    		weckerAnzeigen();
 		    		break;
 		    	case "5":
 		    		return savVar;
