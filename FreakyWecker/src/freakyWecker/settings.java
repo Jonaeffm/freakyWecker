@@ -28,6 +28,10 @@ public class settings {
 			for(int i = 0; i<savVar.sizeOfEndTimes();i++)
 			{
 				System.out.println(Integer.toString(i)+". "+savVar.getNameOfWecker(i));
+				long yourmilliseconds = savVar.getEndTime(i);
+				SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm:ss");    
+				Date resultdate = new Date(yourmilliseconds);
+				System.out.println(sdf.format(resultdate));
 			}
 			Scanner sc0 = new Scanner(System.in);
 			String eingabe0 = sc0.next();
@@ -72,7 +76,7 @@ void weckerHinzufuegen()
 			long yourmilliseconds = savVar.getEndTime(i);
 			SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm:ss");    
 			
-			sdf.setTimeZone(TimeZone.getTimeZone("Europe/Berlin"));
+			//sdf.setTimeZone(TimeZone.getTimeZone("Europe/Berlin"));
 			//df.format(date1);
 			
 			Date resultdate = new Date(yourmilliseconds);
