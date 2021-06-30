@@ -10,6 +10,9 @@ public class saveSettings {
 	//names of the alerm clocks
 	private static List<String> nameOfWecker;
 	
+	private static String pfad;
+	private static String dName;
+	
 	//constructor
 	public saveSettings()
 	{
@@ -56,5 +59,29 @@ public class saveSettings {
 		//System.out.println("deleted");
 		endTimes.remove(i);
 		nameOfWecker.remove(i);
+	}
+
+
+
+	public static String getPfad() {
+		return pfad;
+	}
+
+
+
+	public static void setPfad(String pfad) {
+		saveSettings.pfad = pfad;
+	}
+
+
+
+	public static String getdName() {
+		return dName;
+	}
+
+
+
+	public static void setdName(String dName) {
+		saveSettings.dName = dName;
 	}
 }

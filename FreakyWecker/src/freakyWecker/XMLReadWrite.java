@@ -62,6 +62,15 @@ public class XMLReadWrite {
 	                       //System.out.println("Name geladen: "+temp);
 	                       
 	                   }   
+	                   
+	                   else if(startElement.getName().getLocalPart().equals("Pfad")){
+	                       xmlEvent = xmlEventReader.nextEvent();
+	                       sS.setPfad(xmlEvent.asCharacters().getData());
+	                   }else if(startElement.getName().getLocalPart().equals("DName")){
+	                       xmlEvent = xmlEventReader.nextEvent();
+	                       sS.setdName(xmlEvent.asCharacters().getData());
+	                   }
+	                   
 	               //if Employee end element is reached, add employee object to list
 	               if(xmlEvent.isEndElement()){
 	                   EndElement endElement = xmlEvent.asEndElement();
@@ -125,7 +134,20 @@ public class XMLReadWrite {
 	 	        
 	        }
 	       
+	        writer.writeStartElement("Pfad");
+		       
+
+	        writer.writeCharacters(sS.getPfad());
+	        // write stuff
+	        writer.writeEndElement();
 	        
+	        
+	        writer.writeStartElement("DName");
+		       
+
+	        writer.writeCharacters(sS.getdName());
+	        // write stuff
+	        writer.writeEndElement();
 	       
 	        
 	        writer.writeEndElement();

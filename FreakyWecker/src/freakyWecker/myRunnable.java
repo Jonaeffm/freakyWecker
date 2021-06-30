@@ -41,7 +41,8 @@ public class myRunnable implements Runnable {
 		
 			time = varContainer.savVar.getEndTime(i)/1000 - System.currentTimeMillis()/1000;
 			//System.out.println("hallo");
-		return time;
+		System.out.println("Differenz:"+time);
+			return time;
 	}
 	
 	//import external jar for this function https://github.com/rcasanovan/JMusic
@@ -55,14 +56,14 @@ public class myRunnable implements Runnable {
 		
 		
 		
-			String DNAME = "play";
+			String DNAME = varContainer.savVar.getdName();
 			JMusicSong song = new JMusicSong(1, DNAME, "", "", "");
 
 
 			list.addSongToPlayerList(song);
 		
 
-			MusicPlayerControl.initMusicPlayer("/root/eclipse-workspace/FreakyWecker/src/freakyWecker");
+			MusicPlayerControl.initMusicPlayer(varContainer.savVar.getPfad());
 		
 		
 			MusicPlayerControl.loadSongs(list);
@@ -96,14 +97,17 @@ public class myRunnable implements Runnable {
 		{
 			for(varContainer.i=0;varContainer.i<varContainer.savVar.sizeOfEndTimes();varContainer.i++)
 			{
+				System.out.println("size"+varContainer.savVar.sizeOfEndTimes());
 				/*if(!sameMinute(varContainer.i)&&varContainer.minuteChecked==true)
 					varContainer.minuteChecked=false;*/
 				if(getTimer(varContainer.i)==(long)0)
 				{
+					
 					//(varContainer.minuteChecked = true;
 					//long minuten = getMinutes(varContainer.i);
 					//System.out.println("true");
 					//saveSettings.deleteEndTime(i);
+					//System.out.println("return true");
 					return(true);
 				}
 				//else

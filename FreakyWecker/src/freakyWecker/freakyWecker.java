@@ -115,15 +115,9 @@ static boolean firstTime;
 	    		break;
 	    }*/
 		
-		for(int j=varContainer.savVar.sizeOfEndTimes()-1;j>(-1);j--)
-		{
-			if(varContainer.savVar.getEndTime(j)<System.currentTimeMillis())
-			{
-				System.out.println("Var kleiner");
-				saveSettings.deleteEndTime(j);
-			}
-		}
+		
 			settings useSettings = new settings(varContainer.savVar);
+			System.out.println(useSettings.savVar.getPfad()+useSettings.savVar.getdName());
 	/*	ZoneId z = now.getZone();
 		ZoneRules zoneRules = z.getRules();
 		Boolean isDst = zoneRules.isDaylightSavings( now.toInstant() );*/
@@ -133,14 +127,14 @@ static boolean firstTime;
 		while (true)
 		{
 
-			for(int j=varContainer.savVar.sizeOfEndTimes()-1;j>(-1);j--)
+			/*for(int j=varContainer.savVar.sizeOfEndTimes()-1;j>(-1);j--)
 			{
 				if(varContainer.savVar.getEndTime(j)<System.currentTimeMillis())
 				{
 					//System.out.println("Var kleiner");
 					saveSettings.deleteEndTime(j);
 				}
-			}
+			}*/
 			
 			System.out.println("1. Optionen");
 			System.out.println("2. Start");

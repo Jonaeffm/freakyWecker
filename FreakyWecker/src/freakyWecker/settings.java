@@ -1,12 +1,15 @@
 package freakyWecker;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.zone.ZoneRules;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -24,6 +27,67 @@ public class settings {
 		//System.out.println("Test größe: "+savVar.sizeOfEndTimes());
  }
 
+	void dName()
+	{
+		//________________________________________
+	    System.out.println("***Dateiname***");
+	    
+	    System.out.println(savVar.getPfad());
+		File f1 = new File(savVar.getPfad());
+		ArrayList<File> files = new ArrayList<File>(Arrays.asList(f1.listFiles()));
+		ArrayList<String> names = new ArrayList<String>(Arrays.asList(f1.list()));
+		for (int i=0; i < names.size();i++)
+			System.out.println(names.get(i));
+		Scanner sc = new Scanner(System.in);
+	    System.out.print("Wahl: ");
+	    String eingabe = sc.next();
+	    
+	    for (int i=0;i<names.size();i++)
+	    {
+	    	if(eingabe.equals(names.get(i)))
+	    	{
+	    		String endung = names.get(i).substring(names.get(i).length()-4);
+	    		if (endung.equals(".mp3"))
+	    		{savVar.setdName( names.get(i).substring(0,names.get(i).length()-4));
+	    		System.out.println("Dateiname: "+savVar.getdName());}
+	    	}	
+	    }
+	}
+	
+	void PfadUndName()
+	{
+		System.out.println("***Pfad***");
+		System.out.println(savVar.getPfad());
+		File f = new File(savVar.getPfad());
+		ArrayList<File> files = new ArrayList<File>(Arrays.asList(f.listFiles()));
+		ArrayList<String> names = new ArrayList<String>(Arrays.asList(f.list()));
+		for (int i=0; i < names.size();i++)
+			System.out.println(names.get(i));
+		Scanner sc = new Scanner(System.in);
+	    System.out.print("Wahl: ");
+	    String eingabe = sc.next();
+	    switch (eingabe)
+	    {
+	    case "..":
+	    	savVar.setPfad(f.getParent());
+	    	PfadUndName();
+	    	break;
+	    case ".":
+	    	savVar.setPfad(savVar.getPfad()+"/");
+	    	dName();
+	    
+	    }
+	    for (int i=0;i<names.size();i++)
+	    {
+	    	if(eingabe.equals(names.get(i)))
+	    		{savVar.setPfad(savVar.getPfad()+"/"+names.get(i));
+	    		PfadUndName();
+	    	}
+	    		
+	    }
+	  
+	}
+	
 	void weckerAnzeigen()
 	{
 		if(savVar.sizeOfEndTimes()>0)
@@ -228,14 +292,14 @@ void weckerHinzufuegen()
 public saveSettings runSettings()
 	{
 
-	for(int j=varContainer.savVar.sizeOfEndTimes()-1;j>(-1);j--)
+	/*for(int j=varContainer.savVar.sizeOfEndTimes()-1;j>(-1);j--)
 	{
 		if(varContainer.savVar.getEndTime(j)<System.currentTimeMillis())
 		{
 			//System.out.println("Var kleiner");
 			saveSettings.deleteEndTime(j);
 		}
-	}
+	}*/
 		
 		//savVar = new saveSettings();
 		//System.out.println("Test größe im Menu: "+savVar.sizeOfEndTimes());
@@ -263,7 +327,9 @@ public saveSettings runSettings()
 		    		weckerEntfernen();
 		    		break;
 		    	case "3":
-		    		
+		    		System.out.println(".. - parent");
+		    		System.out.println(". - OK");
+		    		PfadUndName();
 		    		break;
 		    	case "4":
 		    		weckerAnzeigen();
