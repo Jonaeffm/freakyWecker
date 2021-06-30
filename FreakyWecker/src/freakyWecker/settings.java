@@ -104,7 +104,7 @@ void weckerHinzufuegen()
 		
 		
 		long epoch = /*resultdate.getTime()*/System.currentTimeMillis()%86400000; 
-		
+		//long epoch = TimeZone.getTimeZone( "Europe/Berlin").inDaylightTime( System.currentTimeMillis() );
 		
 		
 		long stunden1 = epoch/(60*60*1000);

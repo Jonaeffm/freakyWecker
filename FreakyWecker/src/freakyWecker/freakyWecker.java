@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.time.Clock;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.zone.ZoneRules;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -98,7 +101,7 @@ static boolean firstTime;
 		//savVar = new saveSettings();
 		varContainer.firstTime=true;
 		
-		System.out.println("1. Winterzeit");
+		/*System.out.println("1. Winterzeit");
 		System.out.println("2. Sommerzeit");
 		Scanner sc = new Scanner(System.in);
 		String eingabe = sc.next();
@@ -110,7 +113,14 @@ static boolean firstTime;
 	    	case "2":
 	    		varContainer.winterSummer = false;
 	    		break;
-	    }
+	    }*/
+		
+		ZonedDateTime now = ZonedDateTime.now( ZoneId.of( "America/Montreal" ) );
+	
+		ZoneId z = now.getZone();
+		ZoneRules zoneRules = z.getRules();
+		Boolean isDst = zoneRules.isDaylightSavings( now.toInstant() );
+		varContainer.winterSummer = !isDst;
 		// TODO Auto-generated method stub
 		//Main menu
 		while (true)
@@ -125,8 +135,8 @@ static boolean firstTime;
 			System.out.println("Hauptmenü");
 		    System.out.println("Wahl: ");
 		 
-		    sc = new Scanner(System.in);
-		    eingabe = sc.next();
+		    Scanner sc = new Scanner(System.in);
+		    String  eingabe = sc.next();
 		    switch (eingabe)
 		    {
 		    	case "1":
