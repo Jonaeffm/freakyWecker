@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.zone.ZoneRules;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -109,10 +112,15 @@ void weckerHinzufuegen()
 		
 		long stunden1 = epoch/(60*60*1000);
 		
-		if(varContainer.winterSummer)
-			stunden1=stunden1+1;
-		else
+		ZonedDateTime now = ZonedDateTime.now( ZoneId.of( "Europe/Berlin" ) );
+		ZoneId z = now.getZone();
+		ZoneRules zoneRules = z.getRules();
+		Boolean isDst = zoneRules.isDaylightSavings( now.toInstant() );
+		
+		if(isDst)
 			stunden1=stunden1+2;
+		else
+			stunden1=stunden1+1;
 		
 		long minuten1 = (epoch%(60*60*1000))/(60*1000);
 		long sekunden1=(epoch%(60*1000))/1000;

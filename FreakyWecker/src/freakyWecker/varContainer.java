@@ -6,5 +6,5 @@ public class varContainer {
 	static boolean minuteChecked;
 	static boolean minute;
 	static int i;
-	static boolean winterSummer;
+
 }

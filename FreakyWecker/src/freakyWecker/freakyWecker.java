@@ -115,12 +115,12 @@ static boolean firstTime;
 	    		break;
 	    }*/
 		
-		ZonedDateTime now = ZonedDateTime.now( ZoneId.of( "America/Montreal" ) );
-	
+		
+	/*
 		ZoneId z = now.getZone();
 		ZoneRules zoneRules = z.getRules();
-		Boolean isDst = zoneRules.isDaylightSavings( now.toInstant() );
-		varContainer.winterSummer = !isDst;
+		Boolean isDst = zoneRules.isDaylightSavings( now.toInstant() );*/
+		//varContainer.winterSummer = !isDst;
 		// TODO Auto-generated method stub
 		//Main menu
 		while (true)
