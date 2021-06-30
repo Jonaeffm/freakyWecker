@@ -110,7 +110,7 @@ void weckerHinzufuegen()
 		long stunden1 = epoch/(60*60*1000);
 		
 		if(varContainer.winterSummer)
-			stunden1=stunden1+3;
+			stunden1=stunden1+1;
 		else
 			stunden1=stunden1+2;
 		
