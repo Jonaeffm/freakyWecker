@@ -53,6 +53,7 @@ public class saveSettings {
 	
 	public static void deleteEndTime(int i)
 	{
+		//System.out.println("deleted");
 		endTimes.remove(i);
 		nameOfWecker.remove(i);
 	}

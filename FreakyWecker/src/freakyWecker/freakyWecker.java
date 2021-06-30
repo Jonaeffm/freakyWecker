@@ -97,7 +97,7 @@ static boolean firstTime;
 		XMLReadWrite parser = new XMLReadWrite();
 		varContainer.savVar = parser.readXML(); 
 		
-		settings useSettings = new settings(varContainer.savVar);
+
 		//savVar = new saveSettings();
 		varContainer.firstTime=true;
 		
@@ -115,9 +115,16 @@ static boolean firstTime;
 	    		break;
 	    }*/
 		
-		
-	/*
-		ZoneId z = now.getZone();
+		for(int j=varContainer.savVar.sizeOfEndTimes()-1;j>(-1);j--)
+		{
+			if(varContainer.savVar.getEndTime(j)<System.currentTimeMillis())
+			{
+				System.out.println("Var kleiner");
+				saveSettings.deleteEndTime(j);
+			}
+		}
+			settings useSettings = new settings(varContainer.savVar);
+	/*	ZoneId z = now.getZone();
 		ZoneRules zoneRules = z.getRules();
 		Boolean isDst = zoneRules.isDaylightSavings( now.toInstant() );*/
 		//varContainer.winterSummer = !isDst;
@@ -125,7 +132,15 @@ static boolean firstTime;
 		//Main menu
 		while (true)
 		{
-			
+
+			for(int j=varContainer.savVar.sizeOfEndTimes()-1;j>(-1);j--)
+			{
+				if(varContainer.savVar.getEndTime(j)<System.currentTimeMillis())
+				{
+					//System.out.println("Var kleiner");
+					saveSettings.deleteEndTime(j);
+				}
+			}
 			
 			System.out.println("1. Optionen");
 			System.out.println("2. Start");

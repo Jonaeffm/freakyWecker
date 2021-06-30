@@ -227,7 +227,15 @@ void weckerHinzufuegen()
 //settings	
 public saveSettings runSettings()
 	{
-		
+
+	for(int j=varContainer.savVar.sizeOfEndTimes()-1;j>(-1);j--)
+	{
+		if(varContainer.savVar.getEndTime(j)<System.currentTimeMillis())
+		{
+			//System.out.println("Var kleiner");
+			saveSettings.deleteEndTime(j);
+		}
+	}
 		
 		//savVar = new saveSettings();
 		//System.out.println("Test größe im Menu: "+savVar.sizeOfEndTimes());
