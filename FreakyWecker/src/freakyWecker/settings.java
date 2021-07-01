@@ -73,14 +73,17 @@ public class settings {
 	    	PfadUndName();
 	    	break;
 	    case ".":
-	    	savVar.setPfad(savVar.getPfad()+"/");
+	    	
+	    	
+	    	//savVar.setPfad(savVar.getPfad()+"/");
+	    	
 	    	dName();
 	    
 	    }
 	    for (int i=0;i<names.size();i++)
 	    {
 	    	if(eingabe.equals(names.get(i)))
-	    		{savVar.setPfad(savVar.getPfad()+"/"+names.get(i));
+	    		{savVar.setPfad(savVar.getPfad()+"/"+names.get(i)+"/");
 	    		PfadUndName();
 	    	}
 	    		
@@ -327,6 +330,7 @@ public saveSettings runSettings()
 		    		weckerEntfernen();
 		    		break;
 		    	case "3":
+		    		//savVar.setPfad("/");
 		    		System.out.println(".. - parent");
 		    		System.out.println(". - OK");
 		    		PfadUndName();
