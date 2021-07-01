@@ -117,7 +117,7 @@ static boolean firstTime;
 		
 		
 			settings useSettings = new settings(varContainer.savVar);
-			System.out.println(useSettings.savVar.getPfad()+useSettings.savVar.getdName());
+			System.out.println(useSettings.savVar.getPfad()+"/"+useSettings.savVar.getdName());
 	/*	ZoneId z = now.getZone();
 		ZoneRules zoneRules = z.getRules();
 		Boolean isDst = zoneRules.isDaylightSavings( now.toInstant() );*/
