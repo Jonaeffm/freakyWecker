@@ -41,7 +41,7 @@ public class myRunnable implements Runnable {
 		
 			time = varContainer.savVar.getEndTime(i)/1000 - System.currentTimeMillis()/1000;
 			//System.out.println("hallo");
-		System.out.println("Differenz:"+time);
+		//System.out.println("Differenz:"+time);
 			return time;
 	}
 	
@@ -97,7 +97,7 @@ public class myRunnable implements Runnable {
 		{
 			for(varContainer.i=0;varContainer.i<varContainer.savVar.sizeOfEndTimes();varContainer.i++)
 			{
-				System.out.println("size"+varContainer.savVar.sizeOfEndTimes());
+				//System.out.println("size"+varContainer.savVar.sizeOfEndTimes());
 				/*if(!sameMinute(varContainer.i)&&varContainer.minuteChecked==true)
 					varContainer.minuteChecked=false;*/
 				if(getTimer(varContainer.i)==(long)0)

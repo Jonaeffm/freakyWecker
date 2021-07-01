@@ -96,10 +96,10 @@ public class settings {
 	    		{
 	    		String letztesZeichen = temp.substring(temp.length()-2,temp.length()-1);
 	    		if (letztesZeichen.equals("/"))
-	    		{	System.out.println("compares /");
+	    		{	//System.out.println("compares /");
 	    			savVar.setPfad(savVar.getPfad()+names.get(i));
 	    		}else {
-	    			System.out.println("dont Equals");
+	    			//System.out.println("dont Equals");
 	    		
 	    			savVar.setPfad(savVar.getPfad()+"/"+names.get(i));
 	    		}
