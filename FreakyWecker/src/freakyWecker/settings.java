@@ -90,7 +90,30 @@ public class settings {
 	    for (int i=0;i<names.size();i++)
 	    {
 	    	if(eingabe.equals(names.get(i)))
-	    		{savVar.setPfad(savVar.getPfad()+"/"+names.get(i));
+	    		{
+	    		String temp = savVar.getPfad();
+	    		if(temp.length()>2)
+	    		{
+	    		String letztesZeichen = temp.substring(temp.length()-2,temp.length()-1);
+	    		if (letztesZeichen.equals("/"))
+	    		{	System.out.println("compares /");
+	    			savVar.setPfad(savVar.getPfad()+names.get(i));
+	    		}else {
+	    			System.out.println("dont Equals");
+	    		
+	    			savVar.setPfad(savVar.getPfad()+"/"+names.get(i));
+	    		}
+	    		}else
+	    		{
+	    			if (savVar.getPfad().equals("/"))
+	    			{
+	    				savVar.setPfad(savVar.getPfad()+names.get(i));
+	    			}
+	    			else
+	    			{
+	    				savVar.setPfad(savVar.getPfad()+"/"+names.get(i));
+	    			}
+	    		}
 	    		PfadUndName();
 	    	}
 	    		
