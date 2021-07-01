@@ -99,7 +99,22 @@ public class settings {
 		catch(Exception e)
 		{
 			//f= new File("/");
-			savVar.setPfad("/");
+			
+			String os = System.getProperty("os.name").toLowerCase();
+			if (os.contains("win")){
+			    //Betriebssystem ist Windows-basiert
+				savVar.setPfad("C:/");
+			}
+			else if (os.contains("osx")){
+			    //Betriebssystem ist Apple OSX
+				savVar.setPfad("/");
+			}      
+			else if (os.contains("nix") || os.contains("aix") || os.contains("nux")){
+			    //Betriebssystem ist Linux/Unix basiert
+				savVar.setPfad("/");
+			}
+			
+			
 			PfadUndName();
 		}
 	}
