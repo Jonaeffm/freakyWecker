@@ -90,7 +90,7 @@ public class settings {
 	    for (int i=0;i<names.size();i++)
 	    {
 	    	if(eingabe.equals(names.get(i)))
-	    		{savVar.setPfad(savVar.getPfad()+"/"+names.get(i)+"/");
+	    		{savVar.setPfad(savVar.getPfad()+"/"+names.get(i));
 	    		PfadUndName();
 	    	}
 	    		
