@@ -56,9 +56,16 @@ public class settings {
 	
 	void PfadUndName()
 	{
+		File f = null;
+		try {
 		System.out.println("***Pfad***");
 		System.out.println(savVar.getPfad());
-		File f = new File(savVar.getPfad());
+		
+		
+	
+		f = new File(savVar.getPfad());
+	
+	
 		ArrayList<File> files = new ArrayList<File>(Arrays.asList(f.listFiles()));
 		ArrayList<String> names = new ArrayList<String>(Arrays.asList(f.list()));
 		for (int i=0; i < names.size();i++)
@@ -88,7 +95,13 @@ public class settings {
 	    	}
 	    		
 	    }
-	  
+		}
+		catch(Exception e)
+		{
+			//f= new File("/");
+			savVar.setPfad("/");
+			PfadUndName();
+		}
 	}
 	
 	void weckerAnzeigen()
