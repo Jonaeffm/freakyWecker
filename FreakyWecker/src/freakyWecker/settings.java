@@ -243,15 +243,21 @@ void weckerHinzufuegen()
 		
 		long stunden1 = epoch/(60*60*1000);
 		
-		ZonedDateTime now = ZonedDateTime.now( ZoneId.of( "Europe/Berlin" ) );
+		ZonedDateTime now = ZonedDateTime.now( ZoneId.of(/* "Europe/Berlin"*/savVar.getZeitZoneGespeichert() ) );
 		ZoneId z = now.getZone();
 		ZoneRules zoneRules = z.getRules();
 		Boolean isDst = zoneRules.isDaylightSavings( now.toInstant() );
 		
+		
+		TimeZone timezone = TimeZone.getDefault();
+
+		stunden1 = stunden1 + timezone.getRawOffset()/(60*60*1000);
+		
 		if(isDst)
-			stunden1=stunden1+2;
-		else
-			stunden1=stunden1+1;
+		stunden1=stunden1+1;
+	
+		
+
 		
 		long minuten1 = (epoch%(60*60*1000))/(60*1000);
 		long sekunden1=(epoch%(60*1000))/1000;
