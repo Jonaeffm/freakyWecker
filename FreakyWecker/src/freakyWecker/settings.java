@@ -32,7 +32,11 @@ public class settings {
 		String[] timeZoneIDs = TimeZone.getAvailableIDs();
 		for(int k = 0;k<timeZoneIDs.length;k++)
 			System.out.println(k+" "+timeZoneIDs[k]);
-		return null;
+		Scanner sc = new Scanner(System.in);
+	    System.out.print("Wahl: ");
+	    String eingabe = sc.next();
+	    
+		return timeZoneIDs[Integer.parseInt(eingabe)];
 		
 	}
 	
@@ -402,7 +406,7 @@ public saveSettings runSettings()
 		    	case "5":
 		    		return savVar;
 		    	case "6":
-		    		zeitZone();
+		    		savVar.setZeitZoneGespeichert(zeitZone());
 		    		break;
 		    	default : 
 		    		break;

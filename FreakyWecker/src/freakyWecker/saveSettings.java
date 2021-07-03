@@ -12,6 +12,7 @@ public class saveSettings {
 	
 	private static String pfad;
 	private static String dName;
+	private static String zeitZoneGespeichert;
 	
 	//constructor
 	public saveSettings()
@@ -83,5 +84,17 @@ public class saveSettings {
 
 	public static void setdName(String dName) {
 		saveSettings.dName = dName;
+	}
+
+
+
+	public static String getZeitZoneGespeichert() {
+		return zeitZoneGespeichert;
+	}
+
+
+
+	public static void setZeitZoneGespeichert(String zeitZoneGespeichert) {
+		saveSettings.zeitZoneGespeichert = zeitZoneGespeichert;
 	}
 }
