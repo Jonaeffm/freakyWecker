@@ -27,6 +27,15 @@ public class settings {
 		//System.out.println("Test größe: "+savVar.sizeOfEndTimes());
  }
 
+	String zeitZone()
+	{
+		String[] timeZoneIDs = TimeZone.getAvailableIDs();
+		for(int k = 0;k<timeZoneIDs.length;k++)
+			System.out.println(k+" "+timeZoneIDs[k]);
+		return null;
+		
+	}
+	
 	void dName()
 	{
 		//________________________________________
@@ -364,6 +373,7 @@ public saveSettings runSettings()
 		System.out.println("2. Wecker entfernen");
 		System.out.println("3. Pfad und Dateiname der MP3");
 		System.out.println("4. Wecker anzeigen");
+		System.out.println("6. Zeitzone");
 	
 		System.out.println("5. zurück");
 		while (true)
@@ -391,7 +401,9 @@ public saveSettings runSettings()
 		    		break;
 		    	case "5":
 		    		return savVar;
-		    		
+		    	case "6":
+		    		zeitZone();
+		    		break;
 		    	default : 
 		    		break;
 		    	
