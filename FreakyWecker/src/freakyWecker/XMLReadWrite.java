@@ -69,8 +69,10 @@ public class XMLReadWrite {
 	                   }else if(startElement.getName().getLocalPart().equals("DName")){
 	                       xmlEvent = xmlEventReader.nextEvent();
 	                       sS.setdName(xmlEvent.asCharacters().getData());
+	                   }else if(startElement.getName().getLocalPart().equals("zeitZone")){
+	                       xmlEvent = xmlEventReader.nextEvent();
+	                       sS.setZeitZoneGespeichert(xmlEvent.asCharacters().getData());
 	                   }
-	                   
 	               //if Employee end element is reached, add employee object to list
 	               if(xmlEvent.isEndElement()){
 	                   EndElement endElement = xmlEvent.asEndElement();
@@ -149,6 +151,12 @@ public class XMLReadWrite {
 	        // write stuff
 	        writer.writeEndElement();
 	       
+	        writer.writeStartElement("zeitZone");
+		       
+
+	        writer.writeCharacters(sS.getZeitZoneGespeichert());
+	        // write stuff
+	        writer.writeEndElement();
 	        
 	        writer.writeEndElement();
 	    
