@@ -253,7 +253,7 @@ static boolean firstTime;
 		    		break;
 		    	case"5":
 		    		DBConnect DBC = new DBConnect();
-		    		DBC.connect(varContainer.savVar.getDBO());
+		    		DBC.getTranslation(varContainer.savVar.getDBO(),0,"english");
 		    		break;
 		    	default : 
 		    		break;
