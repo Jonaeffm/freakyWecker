@@ -38,8 +38,8 @@ public class settings {
 	    case "e":
 	    	savVar.setLanguage("e");
 	    	break;
-	    case "d":
-	    	savVar.setLanguage("d");
+	    case "g":
+	    	savVar.setLanguage("g");
 	    	break;
 	    case "n":
 	    	savVar.setLanguage("n");
@@ -470,6 +470,9 @@ public saveSettings runSettings()
 		    	case "7":
 		    		dBOptions DBO = dBOsettings();
 		    		savVar.setDBO(DBO);
+		    		break;
+		    	case "8":
+		    		language();
 		    		break;
 		    	default : 
 		    		break;

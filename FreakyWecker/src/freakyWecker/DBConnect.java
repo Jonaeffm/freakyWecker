@@ -69,16 +69,16 @@ public class DBConnect {
 
                // int albumid = rs.getInt("id");
             	
-            	if (language.equals("german"))
+            	if (language.equals("g"))
             	{
-            		translation = rs.getString("german");
-            	}else if(language.equals("english"))
+            		translation = rs.getString("g");
+            	}else if(language.equals("e"))
             	{
-            		translation = rs.getString("english");
+            		translation = rs.getString("e");
             	}
-            	else if (language.equals("norwegian"))
+            	else if (language.equals("n"))
             	{
-            		translation = rs.getString("norwegian");
+            		translation = rs.getString("n");
             	}
                 System.out.printf( "translation = %s",translation );
 
