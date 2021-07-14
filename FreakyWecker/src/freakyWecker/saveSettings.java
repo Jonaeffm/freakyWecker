@@ -14,9 +14,7 @@ public class saveSettings {
 	private static String dName;
 	private static String zeitZoneGespeichert;
 	
-	private static String dataBase;
-	private static String nameDB;
-	private static String passwordDB;
+	private dBOptions DBO;
 	
 	//constructor
 	public saveSettings()
@@ -104,37 +102,17 @@ public class saveSettings {
 
 
 
-	public static String getDataBase() {
-		return dataBase;
+	public dBOptions getDBO() {
+		return DBO;
 	}
 
 
 
-	public static void setDataBase(String dataBase) {
-		saveSettings.dataBase = dataBase;
+	public void setDBO(dBOptions dBO) {
+		DBO = dBO;
 	}
 
 
 
-	public static String getNameDB() {
-		return nameDB;
-	}
-
-
-
-	public static void setNameDB(String nameDB) {
-		saveSettings.nameDB = nameDB;
-	}
-
-
-
-	public static String getPasswordDB() {
-		return passwordDB;
-	}
-
-
-
-	public static void setPasswordDB(String passwordDB) {
-		saveSettings.passwordDB = passwordDB;
-	}
+	
 }

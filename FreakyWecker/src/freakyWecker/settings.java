@@ -27,6 +27,34 @@ public class settings {
 		//System.out.println("Test größe: "+savVar.sizeOfEndTimes());
  }
 
+	dBOptions dBOsettings()
+	{
+		dBOptions DBO = new dBOptions();
+		
+		System.out.println("Datenbank Name");
+		System.out.print("Wahl: ");
+	    
+		Scanner sc = new Scanner(System.in);
+		
+		DBO.setdBName( sc.next()) ;
+		
+		System.out.println("Datenbank Benutzer Name");
+		System.out.print("Wahl: ");
+	    
+		sc = new Scanner(System.in);
+		
+		DBO.setdBUser( sc.next()) ;
+		
+		System.out.println("Benutzer Passwort");
+		System.out.print("Wahl: ");
+	    
+		sc = new Scanner(System.in);
+		
+		DBO.setdBPassword( sc.next()) ;
+		
+		return DBO;
+	}
+	
 	String zeitZone()
 	{
 		String[] timeZoneIDs = TimeZone.getAvailableIDs();
@@ -384,6 +412,7 @@ public saveSettings runSettings()
 		System.out.println("3. Pfad und Dateiname der MP3");
 		System.out.println("4. Wecker anzeigen");
 		System.out.println("6. Zeitzone");
+		System.out.println("7. Databench options");
 	
 		System.out.println("5. zurück");
 		while (true)
@@ -413,6 +442,10 @@ public saveSettings runSettings()
 		    		return savVar;
 		    	case "6":
 		    		savVar.setZeitZoneGespeichert(zeitZone());
+		    		break;
+		    	case "7":
+		    		dBOptions DBO = dBOsettings();
+		    		savVar.setDBO(DBO);
 		    		break;
 		    	default : 
 		    		break;
