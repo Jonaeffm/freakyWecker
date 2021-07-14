@@ -140,6 +140,7 @@ static boolean firstTime;
 			System.out.println("2. Start");
 			System.out.println("3. Beenden");
 			System.out.println("4. Alarm off");
+			System.out.println("5. SQL TESTFUNKTION");
 			   System.out.println();
 			System.out.println("Hauptmenü");
 		    System.out.println("Wahl: ");
@@ -250,7 +251,10 @@ static boolean firstTime;
 		    			
 		    		}
 		    		break;
-		    		
+		    	case"5":
+		    		DBConnect DBC = new DBConnect();
+		    		DBC.connect(varContainer.savVar.getDBO());
+		    		break;
 		    	default : 
 		    		break;
 		    }
