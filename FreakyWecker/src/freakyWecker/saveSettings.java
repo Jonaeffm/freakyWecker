@@ -15,6 +15,7 @@ public class saveSettings {
 	private static String zeitZoneGespeichert;
 	
 	private dBOptions DBO;
+	private String language;
 	
 	//constructor
 	public saveSettings()
@@ -110,6 +111,18 @@ public class saveSettings {
 
 	public void setDBO(dBOptions dBO) {
 		DBO = dBO;
+	}
+
+
+
+	public String getLanguage() {
+		return language;
+	}
+
+
+
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 
 

@@ -27,6 +27,29 @@ public class settings {
 		//System.out.println("Test größe: "+savVar.sizeOfEndTimes());
  }
 
+	void language()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("language: e - english, g - german, n - norwegian");
+	    System.out.println("Option: ");
+	    String eingabe = sc.next();
+	    switch (eingabe)
+	    {
+	    case "e":
+	    	savVar.setLanguage("e");
+	    	break;
+	    case "d":
+	    	savVar.setLanguage("d");
+	    	break;
+	    case "n":
+	    	savVar.setLanguage("n");
+	    	break;
+	    default:
+	    	language();
+	    	break;
+	    }
+	}
+	
 	dBOptions dBOsettings()
 	{
 		dBOptions DBO = new dBOptions();
@@ -413,6 +436,7 @@ public saveSettings runSettings()
 		System.out.println("4. Wecker anzeigen");
 		System.out.println("6. Zeitzone");
 		System.out.println("7. Databench options");
+		System.out.println("8. language");
 	
 		System.out.println("5. zurück");
 		while (true)
