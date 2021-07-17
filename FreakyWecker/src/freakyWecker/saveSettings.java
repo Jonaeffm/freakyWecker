@@ -14,8 +14,8 @@ public class saveSettings {
 	private static String dName;
 	private static String zeitZoneGespeichert;
 	
-	private dBOptions DBO;
-	private String language;
+	private dBOptions DBO = new dBOptions();
+	private String  language="e";
 	
 	//constructor
 	public saveSettings()

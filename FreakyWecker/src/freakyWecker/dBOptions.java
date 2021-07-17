@@ -1,9 +1,9 @@
 package freakyWecker;
 
 public class dBOptions {
-	private String dBName;
-	private String dBUser;
-	private String dBPassword;
+	private String dBName="jonaeffm";
+	private String dBUser="jonaeffm";
+	private String dBPassword="jonaeffm";
 	public String getdBName() {
 		return dBName;
 	}

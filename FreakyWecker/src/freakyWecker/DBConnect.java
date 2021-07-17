@@ -56,9 +56,9 @@ public class DBConnect {
                 "jdbc:postgresql://127.0.0.1:5432/"+DBO.getdBName(), DBO.getdBUser(), DBO.getdBPassword())) {
 
             if (conn != null) {
-                System.out.println("Connected to the database!");
+                //System.out.println("Connected to the database!");
             } else {
-                System.out.println("Failed to make connection!");
+                //System.out.println("Failed to make connection!");
             }
             
             Statement stmt = conn.createStatement();    
@@ -80,7 +80,7 @@ public class DBConnect {
             	{
             		translation = rs.getString("n");
             	}
-                System.out.printf( "translation = %s",translation );
+                System.out.printf( "%s",translation );
 
                 System.out.println();
 

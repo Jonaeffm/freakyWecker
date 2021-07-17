@@ -136,10 +136,24 @@ static boolean firstTime;
 				}
 			}*/
 			
-			System.out.println("1. Optionen");
-			System.out.println("2. Start");
-			System.out.println("3. Beenden");
-			System.out.println("4. Alarm off");
+			//System.out.println("1. Optionen");
+			DBConnect DBC = new DBConnect();
+    		
+			System.out.println("1.");
+			DBC.getTranslation(varContainer.savVar.getDBO(),0,varContainer.savVar.getLanguage());
+			
+    		//System.out.println("2. Start");
+			System.out.println("2.");
+			DBC.getTranslation(varContainer.savVar.getDBO(),1,varContainer.savVar.getLanguage());
+    		
+    		//System.out.println("3. Beenden");
+			System.out.println("3.");
+			DBC.getTranslation(varContainer.savVar.getDBO(),2,varContainer.savVar.getLanguage());
+			
+    		//System.out.println("4. Alarm off");
+			System.out.println("4.");
+			DBC.getTranslation(varContainer.savVar.getDBO(),3,varContainer.savVar.getLanguage());
+    		
 			System.out.println("5. SQL TESTFUNKTION");
 			   System.out.println();
 			System.out.println("Hauptmenü");
@@ -252,7 +266,7 @@ static boolean firstTime;
 		    		}
 		    		break;
 		    	case"5":
-		    		DBConnect DBC = new DBConnect();
+		    		DBC = new DBConnect();
 		    		DBC.getTranslation(varContainer.savVar.getDBO(),0,varContainer.savVar.getLanguage());
 		    		break;
 		    	default : 
