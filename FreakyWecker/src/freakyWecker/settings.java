@@ -428,17 +428,43 @@ public saveSettings runSettings()
 		//savVar = new saveSettings();
 		//System.out.println("Test größe im Menu: "+savVar.sizeOfEndTimes());
 		//System.out.println();
-		System.out.println("Optionen");
+	DBConnect DBC = new DBConnect();	
+	
+	//System.out.println("Optionen");
+	
+	DBC.getTranslation(varContainer.savVar.getDBO(),5,varContainer.savVar.getLanguage());
+	
+	
 		System.out.println();
-		System.out.println("1. Wecker hinzufügen");
-		System.out.println("2. Wecker entfernen");
-		System.out.println("3. Pfad und Dateiname der MP3");
-		System.out.println("4. Wecker anzeigen");
-		System.out.println("6. Zeitzone");
+		//System.out.println("1. Wecker hinzufügen");
+		System.out.printf("1.");
+		DBC.getTranslation(varContainer.savVar.getDBO(),6,varContainer.savVar.getLanguage());
+		
+		
+		//System.out.println("2. Wecker entfernen");
+		System.out.printf("2.");
+		DBC.getTranslation(varContainer.savVar.getDBO(),7,varContainer.savVar.getLanguage());
+		
+		
+		//System.out.println("3. Pfad und Dateiname der MP3");
+		System.out.printf("3.");
+		DBC.getTranslation(varContainer.savVar.getDBO(),8,varContainer.savVar.getLanguage());
+		
+		
+		//System.out.println("4. Wecker anzeigen");
+		System.out.printf("4.");
+		DBC.getTranslation(varContainer.savVar.getDBO(),9,varContainer.savVar.getLanguage());
+		
+		
+		System.out.println("6. timezone");
 		System.out.println("7. Databench options");
 		System.out.println("8. language");
 	
-		System.out.println("5. zurück");
+		//System.out.println("5. zurück");
+		System.out.printf("5.");
+		DBC.getTranslation(varContainer.savVar.getDBO(),10,varContainer.savVar.getLanguage());
+		
+		
 		while (true)
 		{
 			Scanner sc = new Scanner(System.in);
