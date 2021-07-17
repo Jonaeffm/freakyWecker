@@ -75,6 +75,15 @@ public class XMLReadWrite {
 	                   }else if(startElement.getName().getLocalPart().equals("language")){
 	                       xmlEvent = xmlEventReader.nextEvent();
 	                       sS.setLanguage(xmlEvent.asCharacters().getData());
+	                   }else if(startElement.getName().getLocalPart().equals("DBName")){
+	                       xmlEvent = xmlEventReader.nextEvent();
+	                       sS.getDBO().setdBName(xmlEvent.asCharacters().getData());
+	                   }else if(startElement.getName().getLocalPart().equals("DBUser")){
+	                       xmlEvent = xmlEventReader.nextEvent();
+	                       sS.getDBO().setdBUser(xmlEvent.asCharacters().getData());
+	                   }else if(startElement.getName().getLocalPart().equals("DBPassword")){
+	                       xmlEvent = xmlEventReader.nextEvent();
+	                       sS.getDBO().setdBPassword(xmlEvent.asCharacters().getData());
 	                   }
 	               //if Employee end element is reached, add employee object to list
 	               if(xmlEvent.isEndElement()){
@@ -168,6 +177,26 @@ public class XMLReadWrite {
 	        // write stuff
 	        writer.writeEndElement();
 	        
+	        writer.writeStartElement("DBName");
+		       
+
+	        writer.writeCharacters(sS.getDBO().getdBName());
+	        // write stuff
+	        writer.writeEndElement();
+	        
+	        writer.writeStartElement("DBUser");
+		       
+
+	        writer.writeCharacters(sS.getDBO().getdBUser());
+	        // write stuff
+	        writer.writeEndElement();
+	        
+	        writer.writeStartElement("DBPassword");
+		       
+
+	        writer.writeCharacters(sS.getDBO().getdBPassword());
+	        // write stuff
+	        writer.writeEndElement();
 	        
 	        writer.writeEndElement();
 	    
