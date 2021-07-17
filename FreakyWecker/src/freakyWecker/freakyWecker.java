@@ -139,26 +139,31 @@ static boolean firstTime;
 			//System.out.println("1. Optionen");
 			DBConnect DBC = new DBConnect();
     		
-			System.out.println("1.");
+			System.out.printf("1.");
 			DBC.getTranslation(varContainer.savVar.getDBO(),0,varContainer.savVar.getLanguage());
 			
     		//System.out.println("2. Start");
-			System.out.println("2.");
+			System.out.printf("2.");
 			DBC.getTranslation(varContainer.savVar.getDBO(),1,varContainer.savVar.getLanguage());
     		
     		//System.out.println("3. Beenden");
-			System.out.println("3.");
+			System.out.printf("3.");
 			DBC.getTranslation(varContainer.savVar.getDBO(),2,varContainer.savVar.getLanguage());
 			
     		//System.out.println("4. Alarm off");
-			System.out.println("4.");
+			System.out.printf("4.");
 			DBC.getTranslation(varContainer.savVar.getDBO(),3,varContainer.savVar.getLanguage());
     		
 			System.out.println("5. SQL TESTFUNKTION");
 			   System.out.println();
-			System.out.println("Hauptmenü");
-		    System.out.println("Wahl: ");
-		 
+			
+			   
+			//System.out.println("Hauptmenü");
+			   DBC.getTranslation(varContainer.savVar.getDBO(),4,varContainer.savVar.getLanguage());
+	    		
+		    //System.out.println("Wahl: ");
+			   DBC.getTranslation(varContainer.savVar.getDBO(),5,varContainer.savVar.getLanguage());
+	    		
 		    Scanner sc = new Scanner(System.in);
 		    String  eingabe = sc.next();
 		    switch (eingabe)
