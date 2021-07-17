@@ -316,8 +316,18 @@ void weckerHinzufuegen()
 		long heuteBeginn = System.currentTimeMillis()-stunden1*(60*60*1000)-minuten1*(60*1000)-sekunden1*1000;
 		long morgenBeginn = heuteBeginn+86400000;
 		
-		System.out.println("1. Heute");
-		System.out.println("2. Morgen");
+		DBConnect DBC = new DBConnect();	
+		
+		//System.out.println("1. Heute");
+		System.out.printf("1.");
+		DBC.getTranslation(varContainer.savVar.getDBO(),11,varContainer.savVar.getLanguage());
+		
+		
+		//System.out.println("2. Morgen");
+		System.out.printf("2.");
+		DBC.getTranslation(varContainer.savVar.getDBO(),12,varContainer.savVar.getLanguage());
+		
+		
 		Scanner sc = new Scanner(System.in);
 		String eingabe = sc.next();
 	    
@@ -331,7 +341,9 @@ void weckerHinzufuegen()
 		
 		String s;
 		
-		System.out.println("Stunden");
+		//System.out.println("Stunden");
+		DBC.getTranslation(varContainer.savVar.getDBO(),13,varContainer.savVar.getLanguage());
+		
 		try{
 		        BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
 		        s = bufferRead.readLine();
@@ -349,7 +361,8 @@ void weckerHinzufuegen()
 			 
 		   }
 		
-		System.out.println("Minuten");
+		//System.out.println("Minuten");
+		DBC.getTranslation(varContainer.savVar.getDBO(),14,varContainer.savVar.getLanguage());
 		try{
 		        BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
 		        s  = bufferRead.readLine();
@@ -367,7 +380,8 @@ void weckerHinzufuegen()
 			 
 		   }
 		
-		System.out.println("Name");
+		//System.out.println("Name");
+		DBC.getTranslation(varContainer.savVar.getDBO(),15,varContainer.savVar.getLanguage());
 		try{
 		        BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
 		        s  = bufferRead.readLine();
@@ -456,10 +470,18 @@ public saveSettings runSettings()
 		DBC.getTranslation(varContainer.savVar.getDBO(),9,varContainer.savVar.getLanguage());
 		
 		
-		System.out.println("6. timezone");
+		//System.out.println("6. timezone");
+		System.out.printf("6.");
+		DBC.getTranslation(varContainer.savVar.getDBO(),17,varContainer.savVar.getLanguage());
+		
+		
 		System.out.println("7. Databench options");
-		System.out.println("8. language");
-	
+		//System.out.println("8. language");
+		System.out.printf("8.");
+		DBC.getTranslation(varContainer.savVar.getDBO(),16,varContainer.savVar.getLanguage());
+		
+		
+		
 		//System.out.println("5. zurück");
 		System.out.printf("5.");
 		DBC.getTranslation(varContainer.savVar.getDBO(),10,varContainer.savVar.getLanguage());
