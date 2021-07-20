@@ -1,3 +1,11 @@
 # freakyWecker
 alarm clock (terminal)
-add a mp3 play.mp3 
+
+- MP3 alarm
+- saves alarm clocks in XML
+- all time zones
+- english, german and norwegian language
+- Windwos, Mac and Linux
+- languages in database
+
+for installing database run posgreSQLtest
