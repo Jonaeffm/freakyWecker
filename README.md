@@ -9,3 +9,4 @@ alarm clock (terminal)
 - languages in database
 
 for installing database run posgreSQLtest
+and fill database user, database password and database name into xml file
