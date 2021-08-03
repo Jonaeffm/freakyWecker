@@ -4,6 +4,8 @@
 	<property name="war.dir" value="build/FreakyWecker"/>
 	<property name="war.file" value="${dist.dir}/${appname}.war"/>
 	<property name="webinf.dir" value="${war.dir}/WEB_INF"/>
+	<property name="src.dir" value="src/freakyWecker/"/>
+	<property name="class.dir" value="bin/freakyWecker/"/>
 	
 	<path id="master-classpath"
 		description="Master CLASSPATH for this script">
@@ -15,8 +17,12 @@
 	
 	<target name="init" description="setup for build script">
 		<mkdir dir="${class.dir}"/>
-		<mkdir dir="${libs.dir}"/>
-		<mkdir dir="${jsp.dir}"/>
+		<mkdir dir="${lib.dir}"/>
 		
+	</target>
+	
+	<target name="compile" description="Compiles .java files to WAR directory">
+		<javac srcdir="${src.dir}" destdir="${class.dir}" debug="true"
+			failonerror="true" classpathref="${master-classpath}"/>
 	</target>
 </project>
