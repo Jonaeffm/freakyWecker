@@ -23,6 +23,12 @@
 	
 	<target name="compile" description="Compiles .java files to WAR directory">
 		<javac srcdir="${src.dir}" destdir="${class.dir}" debug="true"
-			failonerror="true" classpathref="${master-classpath}"/>
+			failonerror="true" classpathref="${master-classpath}" includeantruntime="false"/>
 	</target>
+	<war destfile="${war.file}">
+		<fileset dir="${war.dir}">
+			<include name="**/*.*"/>
+			
+		</fileset>
+	</war>
 </project>
