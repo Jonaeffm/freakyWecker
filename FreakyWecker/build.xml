@@ -1,34 +1,27 @@
-<project name="FreakyWecker" basedir=".">
+<project name="FreakyWecker" basedir="." default="build">
 	<property name="appname" value="FreakyWecker"/>
 	<property name="lib.dir" value="lib"/>
-	<property name="war.dir" value="build/FreakyWecker"/>
-	<property name="war.file" value="${dist.dir}/${appname}.war"/>
-	<property name="webinf.dir" value="${war.dir}/WEB_INF"/>
-	<property name="src.dir" value="src/freakyWecker/"/>
-	<property name="class.dir" value="bin/freakyWecker/"/>
+	<property name="jar.dir" value="build/FreakyWecker"/>
+	<property name="jar.file" value="${dist.dir}/${appname}.jar"/>
+	<property name="src.dir" value="src"/>
 	
 	<path id="master-classpath"
-		description="Master CLASSPATH for this script">
+	description="Master CLASSPATH for this script">
 		<fileset dir="${lib.dir}">
 			<include name="*.jar"/>
 		</fileset>
-		<pathelement location="build/FreakyWecker/WEB-INF/classes/"/>
+		<pathelement location="build/FreakyWecker/classes/"/>
 	</path>
 	
 	<target name="init" description="setup for build script">
 		<mkdir dir="${class.dir}"/>
-		<mkdir dir="${lib.dir}"/>
-		
+		<mkdir dir="${libs.dir}"/>
+		<mkdir dir="${jsp.dir}"/>
 	</target>
 	
-	<target name="compile" description="Compiles .java files to WAR directory">
+	<target name="compile">
 		<javac srcdir="${src.dir}" destdir="${class.dir}" debug="true"
-			failonerror="true" classpathref="${master-classpath}" includeantruntime="false"/>
+		failonerror="true" classpathref="master-classpath"/>
 	</target>
-	<war destfile="${war.file}">
-		<fileset dir="${war.dir}">
-			<include name="**/*.*"/>
-			
-		</fileset>
-	</war>
+	
 </project>

@@ -34,16 +34,9 @@ public class saveSettings {
 	
 	public void setEndTime(long endTime) {
 		endTimes.add(endTime);
-		//System.out.println("long "+endTime+" wurde hinzugefügt.");
+		
 	}
 	
-	/*public static long getStartTime() {
-		return startTime;
-	}
-	
-	public static void setStartTime(long startTime) {
-		saveSettings.startTime = startTime;
-	}*/
 
 	public String getNameOfWecker(int i) {
 		return nameOfWecker.get(i);
@@ -60,7 +53,7 @@ public class saveSettings {
 	
 	public static void deleteEndTime(int i)
 	{
-		//System.out.println("deleted");
+	
 		endTimes.remove(i);
 		nameOfWecker.remove(i);
 	}

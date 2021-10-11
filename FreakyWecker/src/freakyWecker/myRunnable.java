@@ -29,7 +29,7 @@ public class myRunnable implements Runnable {
 		
 		
 			time =(int) (varContainer.savVar.getEndTime(i)/1000/60)%60;
-			//System.out.println(time+" Minuten");
+	
 		return time;
 	}
 	
@@ -40,8 +40,7 @@ public class myRunnable implements Runnable {
 		
 		
 			time = varContainer.savVar.getEndTime(i)/1000 - System.currentTimeMillis()/1000;
-			//System.out.println("hallo");
-		//System.out.println("Differenz:"+time);
+		
 			return time;
 	}
 	
@@ -83,7 +82,7 @@ public class myRunnable implements Runnable {
 	
 	    
 	  
-		//System.exit(0);
+
 		
         
         
@@ -97,21 +96,14 @@ public class myRunnable implements Runnable {
 		{
 			for(varContainer.i=0;varContainer.i<varContainer.savVar.sizeOfEndTimes();varContainer.i++)
 			{
-				//System.out.println("size"+varContainer.savVar.sizeOfEndTimes());
-				/*if(!sameMinute(varContainer.i)&&varContainer.minuteChecked==true)
-					varContainer.minuteChecked=false;*/
+				
 				if(getTimer(varContainer.i)==(long)0)
 				{
 					
-					//(varContainer.minuteChecked = true;
-					//long minuten = getMinutes(varContainer.i);
-					//System.out.println("true");
-					//saveSettings.deleteEndTime(i);
-					//System.out.println("return true");
+				
 					return(true);
 				}
-				//else
-					//return(false);
+				
 			}
 			
 		}
@@ -119,7 +111,7 @@ public class myRunnable implements Runnable {
 		{
 			return(false);
 		}
-		//System.out.println("false");
+	
 		return false;
 	}
 	
@@ -146,13 +138,13 @@ public class myRunnable implements Runnable {
 			{
 				
 					//geting Time in desire format
-				System.out.print("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
+				System.out.print("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
 				System.out.print(printTime());
 				Thread.currentThread();
 			
 				//Thread sleeping for 1 sec
 				Thread.sleep(1000);
-				//run();
+			
 				
 			}
 			if(checkTime()==true)
@@ -161,15 +153,10 @@ public class myRunnable implements Runnable {
 				System.out.print("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
 				System.out.println(varContainer.savVar.getNameOfWecker(varContainer.i));
 				playTheSong();
-				//Thread.currentThread();
+			
 				
 				Thread.currentThread();
-				
-				//Thread sleeping for 1 sec
-		
 			
-			//Thread sleeping for 1 sec
-				//Thread.sleep(1000);
 				
 			}	
 	

@@ -24,7 +24,7 @@ public class settings {
 	public settings(saveSettings savVar1)
  {
 		savVar = savVar1;
-		//System.out.println("Test größe: "+savVar.sizeOfEndTimes());
+		
  }
 
 	void language()
@@ -145,9 +145,6 @@ public class settings {
 	    	break;
 	    case ".":
 	    	
-	    	
-	    	//savVar.setPfad(savVar.getPfad()+"/");
-	    	
 	    	dName();
 	    
 	    }
@@ -185,7 +182,6 @@ public class settings {
 		}
 		catch(Exception e)
 		{
-			//f= new File("/");
 			
 			String os = System.getProperty("os.name").toLowerCase();
 			if (os.contains("win")){
@@ -238,7 +234,7 @@ void weckerEntfernen()
 	}
 	Scanner sc0 = new Scanner(System.in);
 	String eingabe0 = sc0.next();
-	//System.out.println("Eingabe Wert: "+eingabe0);
+
 	if(Integer.parseInt(eingabe0)<savVar.sizeOfEndTimes())
 	{	
 		savVar.deleteEndTime(Integer.parseInt(eingabe0));
@@ -261,25 +257,14 @@ void weckerHinzufuegen()
 			long yourmilliseconds = savVar.getEndTime(i);
 			SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm:ss");    
 			
-			//sdf.setTimeZone(TimeZone.getTimeZone("Europe/Berlin"));
-			//df.format(date1);
 			
 			Date resultdate = new Date(yourmilliseconds);
-			//System.out.println(savVar.getNameOfWecker(i)+sdf.format(resultdate));
-			//System.out.println("long:"+resultdate.getTime());
-		
+			
 		}
 		
 		System.out.println();
 		
-		//Date date1 = new Date();
-		//DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-		// Use Berlin's time zone to format the date in
-		//df.setTimeZone(TimeZone.getTimeZone("Europe/Berlin"));
-		//df.format(date1);
-		//Calendar cal = GregorianCalendar.getInstance(TimeZone.getTimeZone("Germany"), Locale.GERMANY);
-		//cal.setTime(date1);
+		
 		
 	
 		
@@ -361,7 +346,6 @@ void weckerHinzufuegen()
 			 
 		   }
 		
-		//System.out.println("Minuten");
 		DBC.getTranslation(varContainer.savVar.getDBO(),14,varContainer.savVar.getLanguage());
 		try{
 		        BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
@@ -380,7 +364,7 @@ void weckerHinzufuegen()
 			 
 		   }
 		
-		//System.out.println("Name");
+
 		DBC.getTranslation(varContainer.savVar.getDBO(),15,varContainer.savVar.getLanguage());
 		try{
 		        BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
@@ -393,15 +377,11 @@ void weckerHinzufuegen()
 			 
 		   }
 		
-		/*long startTime = (long)System.currentTimeMillis();
 		
-		savVar.setStartTime(startTime);*/
         
 		long tagBeginnStunden=heuteBeginn%86400000/(60*60*1000);
 		long tagBeginnMinuten=heuteBeginn%86400000%(60*60*1000)/(60*1000);
-		//long weckerGestelltAuf = (System.currentTimeMillis()/86400000)+stunden1*60*60*1000+minuten1*60*1000;
-		//System.out.println("Es ist "+Long.toString(stunden1)+" Uhr "+ Long.toString(minuten1));
-		//System.out.println("Der Tag beginnt um "+Long.toString(tagBeginnStunden)+" Uhr "+tagBeginnMinuten);
+		
 		long endTime; 
 		
 		switch (eingabe)
@@ -419,70 +399,47 @@ void weckerHinzufuegen()
        default : 
     		break;
     	}
-    	
-    	
-    		
-		//Sytem.out.println("Wecker gestellt auf:"+)
-		
+
 	}
 	
 //settings	
 public saveSettings runSettings()
 	{
 
-	/*for(int j=varContainer.savVar.sizeOfEndTimes()-1;j>(-1);j--)
-	{
-		if(varContainer.savVar.getEndTime(j)<System.currentTimeMillis())
-		{
-			//System.out.println("Var kleiner");
-			saveSettings.deleteEndTime(j);
-		}
-	}*/
-		
-		//savVar = new saveSettings();
-		//System.out.println("Test größe im Menu: "+savVar.sizeOfEndTimes());
-		//System.out.println();
 	DBConnect DBC = new DBConnect();	
-	
-	//System.out.println("Optionen");
 	
 	DBC.getTranslation(varContainer.savVar.getDBO(),5,varContainer.savVar.getLanguage());
 	
 	
 		System.out.println();
-		//System.out.println("1. Wecker hinzufügen");
+
 		System.out.printf("1.");
 		DBC.getTranslation(varContainer.savVar.getDBO(),6,varContainer.savVar.getLanguage());
 		
 		
-		//System.out.println("2. Wecker entfernen");
+
 		System.out.printf("2.");
 		DBC.getTranslation(varContainer.savVar.getDBO(),7,varContainer.savVar.getLanguage());
 		
-		
-		//System.out.println("3. Pfad und Dateiname der MP3");
+
 		System.out.printf("3.");
 		DBC.getTranslation(varContainer.savVar.getDBO(),8,varContainer.savVar.getLanguage());
 		
-		
-		//System.out.println("4. Wecker anzeigen");
+
 		System.out.printf("4.");
 		DBC.getTranslation(varContainer.savVar.getDBO(),9,varContainer.savVar.getLanguage());
 		
-		
-		//System.out.println("6. timezone");
+
 		System.out.printf("6.");
 		DBC.getTranslation(varContainer.savVar.getDBO(),17,varContainer.savVar.getLanguage());
 		
 		
 		System.out.println("7. Databench options");
-		//System.out.println("8. language");
+
 		System.out.printf("8.");
 		DBC.getTranslation(varContainer.savVar.getDBO(),16,varContainer.savVar.getLanguage());
 		
 		
-		
-		//System.out.println("5. zurück");
 		System.out.printf("5.");
 		DBC.getTranslation(varContainer.savVar.getDBO(),10,varContainer.savVar.getLanguage());
 		
@@ -529,8 +486,6 @@ public saveSettings runSettings()
 		    }
 		}
 		
-		//savVar = new saveSettings();
 		
-			
 	}
 }

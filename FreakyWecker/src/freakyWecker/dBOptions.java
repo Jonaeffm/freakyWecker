@@ -1,5 +1,6 @@
 package freakyWecker;
 
+//connection variables
 public class dBOptions {
 	private String dBName;
 	private String dBUser;

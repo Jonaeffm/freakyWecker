@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+//this class connects to the database
 public class DBConnect {
 	public void connect (dBOptions DBO )
 	{

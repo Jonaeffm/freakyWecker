@@ -85,7 +85,7 @@ public class XMLReadWrite {
 	                       xmlEvent = xmlEventReader.nextEvent();
 	                       sS.getDBO().setdBPassword(xmlEvent.asCharacters().getData());
 	                   }
-	               //if Employee end element is reached, add employee object to list
+	               
 	               if(xmlEvent.isEndElement()){
 	                   EndElement endElement = xmlEvent.asEndElement();
 	                   if(endElement.getName().getLocalPart().equals("SaveSettings")){
@@ -99,8 +99,7 @@ public class XMLReadWrite {
 	            e.printStackTrace();
 	        }
 		
-	        //2
-	       //System.out.println("---Test---");
+	       
 	        
 	        for (int i = 0;i<sS.sizeOfEndTimes();i++)
 			{
@@ -108,12 +107,10 @@ public class XMLReadWrite {
 				SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm:ss");    
 				
 				sdf.setTimeZone(TimeZone.getTimeZone("Europe/Berlin"));
-				//df.format(date1);
+		
 				
 				Date resultdate = new Date(yourmilliseconds);
-				//System.out.println(sS.getNameOfWecker(i)+sdf.format(resultdate));
-				//System.out.println("long:"+resultdate.getTime());
-			
+				
 			}    
 	        
 	        
