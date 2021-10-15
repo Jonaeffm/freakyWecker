@@ -28,7 +28,7 @@ public class myRunnable implements Runnable {
 		int time;
 		
 		
-			time =(int) (varContainer.savVar.getEndTime(i)/1000/60)%60;
+			time =(int) (varContainer.getSavVar().getEndTime(i)/1000/60)%60;
 	
 		return time;
 	}
@@ -39,7 +39,7 @@ public class myRunnable implements Runnable {
 		long time;
 		
 		
-			time = varContainer.savVar.getEndTime(i)/1000 - System.currentTimeMillis()/1000;
+			time = varContainer.getSavVar().getEndTime(i)/1000 - System.currentTimeMillis()/1000;
 		
 			return time;
 	}
@@ -48,21 +48,21 @@ public class myRunnable implements Runnable {
 	@SuppressWarnings("deprecation")
 	public static void playTheSong() 
 	{
-		if (varContainer.firstTime == true)
+		if (varContainer.isFirstTime() == true)
 		{
-			varContainer.firstTime=false;
+			varContainer.setFirstTime(false);
 			JMusicPlayerList list = new JMusicPlayerList();
 		
 		
 		
-			String DNAME = varContainer.savVar.getdName();
+			String DNAME = varContainer.getSavVar().getdName();
 			JMusicSong song = new JMusicSong(1, DNAME, "", "", "");
 
 
 			list.addSongToPlayerList(song);
 		
 
-			MusicPlayerControl.initMusicPlayer(varContainer.savVar.getPfad());
+			MusicPlayerControl.initMusicPlayer(varContainer.getSavVar().getPfad());
 		
 		
 			MusicPlayerControl.loadSongs(list);
@@ -94,10 +94,10 @@ public class myRunnable implements Runnable {
 	{
 		try
 		{
-			for(varContainer.i=0;varContainer.i<varContainer.savVar.sizeOfEndTimes();varContainer.i++)
+			for(varContainer.setI(0);varContainer.getI()<varContainer.getSavVar().sizeOfEndTimes();varContainer.setI(varContainer.getI() + 1))
 			{
 				
-				if(getTimer(varContainer.i)==(long)0)
+				if(getTimer(varContainer.getI())==(long)0)
 				{
 					
 				
@@ -151,7 +151,7 @@ public class myRunnable implements Runnable {
 			{
 				//saveSettings.deleteEndTime(varContainer.i);
 				System.out.print("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
-				System.out.println(varContainer.savVar.getNameOfWecker(varContainer.i));
+				System.out.println(varContainer.getSavVar().getNameOfWecker(varContainer.getI()));
 				playTheSong();
 			
 				

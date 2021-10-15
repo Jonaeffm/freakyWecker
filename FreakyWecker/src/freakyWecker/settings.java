@@ -18,8 +18,17 @@ import java.util.Scanner;
 import java.util.TimeZone;
 
 public class settings {
-	public saveSettings savVar;
+	private saveSettings savVar;
  
+	public saveSettings getSavVar()
+	{
+		return savVar;
+	}
+	
+	public void setSavVar(saveSettings ss)
+	{
+		savVar = ss;
+	}
 	//constructor
 	public settings(saveSettings savVar1)
  {
@@ -305,12 +314,12 @@ void weckerHinzufuegen()
 		
 		//System.out.println("1. Heute");
 		System.out.printf("1.");
-		DBC.getTranslation(varContainer.savVar.getDBO(),11,varContainer.savVar.getLanguage());
+		DBC.getTranslation(varContainer.getSavVar().getDBO(),11,varContainer.getSavVar().getLanguage());
 		
 		
 		//System.out.println("2. Morgen");
 		System.out.printf("2.");
-		DBC.getTranslation(varContainer.savVar.getDBO(),12,varContainer.savVar.getLanguage());
+		DBC.getTranslation(varContainer.getSavVar().getDBO(),12,varContainer.getSavVar().getLanguage());
 		
 		
 		Scanner sc = new Scanner(System.in);
@@ -327,7 +336,7 @@ void weckerHinzufuegen()
 		String s;
 		
 		//System.out.println("Stunden");
-		DBC.getTranslation(varContainer.savVar.getDBO(),13,varContainer.savVar.getLanguage());
+		DBC.getTranslation(varContainer.getSavVar().getDBO(),13,varContainer.getSavVar().getLanguage());
 		
 		try{
 		        BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
@@ -346,7 +355,7 @@ void weckerHinzufuegen()
 			 
 		   }
 		
-		DBC.getTranslation(varContainer.savVar.getDBO(),14,varContainer.savVar.getLanguage());
+		DBC.getTranslation(varContainer.getSavVar().getDBO(),14,varContainer.getSavVar().getLanguage());
 		try{
 		        BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
 		        s  = bufferRead.readLine();
@@ -365,7 +374,7 @@ void weckerHinzufuegen()
 		   }
 		
 
-		DBC.getTranslation(varContainer.savVar.getDBO(),15,varContainer.savVar.getLanguage());
+		DBC.getTranslation(varContainer.getSavVar().getDBO(),15,varContainer.getSavVar().getLanguage());
 		try{
 		        BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
 		        s  = bufferRead.readLine();
@@ -408,40 +417,40 @@ public saveSettings runSettings()
 
 	DBConnect DBC = new DBConnect();	
 	
-	DBC.getTranslation(varContainer.savVar.getDBO(),5,varContainer.savVar.getLanguage());
+	DBC.getTranslation(varContainer.getSavVar().getDBO(),5,varContainer.getSavVar().getLanguage());
 	
 	
 		System.out.println();
 
 		System.out.printf("1.");
-		DBC.getTranslation(varContainer.savVar.getDBO(),6,varContainer.savVar.getLanguage());
+		DBC.getTranslation(varContainer.getSavVar().getDBO(),6,varContainer.getSavVar().getLanguage());
 		
 		
 
 		System.out.printf("2.");
-		DBC.getTranslation(varContainer.savVar.getDBO(),7,varContainer.savVar.getLanguage());
+		DBC.getTranslation(varContainer.getSavVar().getDBO(),7,varContainer.getSavVar().getLanguage());
 		
 
 		System.out.printf("3.");
-		DBC.getTranslation(varContainer.savVar.getDBO(),8,varContainer.savVar.getLanguage());
+		DBC.getTranslation(varContainer.getSavVar().getDBO(),8,varContainer.getSavVar().getLanguage());
 		
 
 		System.out.printf("4.");
-		DBC.getTranslation(varContainer.savVar.getDBO(),9,varContainer.savVar.getLanguage());
+		DBC.getTranslation(varContainer.getSavVar().getDBO(),9,varContainer.getSavVar().getLanguage());
 		
 
 		System.out.printf("6.");
-		DBC.getTranslation(varContainer.savVar.getDBO(),17,varContainer.savVar.getLanguage());
+		DBC.getTranslation(varContainer.getSavVar().getDBO(),17,varContainer.getSavVar().getLanguage());
 		
 		
 		System.out.println("7. Databench options");
 
 		System.out.printf("8.");
-		DBC.getTranslation(varContainer.savVar.getDBO(),16,varContainer.savVar.getLanguage());
+		DBC.getTranslation(varContainer.getSavVar().getDBO(),16,varContainer.getSavVar().getLanguage());
 		
 		
 		System.out.printf("5.");
-		DBC.getTranslation(varContainer.savVar.getDBO(),10,varContainer.savVar.getLanguage());
+		DBC.getTranslation(varContainer.getSavVar().getDBO(),10,varContainer.getSavVar().getLanguage());
 		
 		
 		while (true)

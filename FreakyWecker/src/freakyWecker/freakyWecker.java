@@ -29,12 +29,12 @@ public class freakyWecker {
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException, XMLStreamException {
 		//load saved data
-		varContainer.savVar= new saveSettings();
+		varContainer.setSavVar(new saveSettings());
 		XMLReadWrite parser = new XMLReadWrite();
-		varContainer.savVar = parser.readXML(); 
-		varContainer.firstTime=true;
-			settings useSettings = new settings(varContainer.savVar);
-			System.out.println(useSettings.savVar.getPfad()+"/"+useSettings.savVar.getdName());
+		varContainer.setSavVar(parser.readXML()); 
+		varContainer.setFirstTime(true);
+			settings useSettings = new settings(varContainer.getSavVar());
+			System.out.println(useSettings.getSavVar().getPfad()+"/"+useSettings.getSavVar().getdName());
 
 		while (true)
 		{
@@ -43,23 +43,23 @@ public class freakyWecker {
 			DBConnect DBC = new DBConnect();
     		
 			System.out.printf("1.");
-			DBC.getTranslation(varContainer.savVar.getDBO(),0,varContainer.savVar.getLanguage());
+			DBC.getTranslation(varContainer.getSavVar().getDBO(),18,varContainer.getSavVar().getLanguage());
 			
 			System.out.printf("2.");
-			DBC.getTranslation(varContainer.savVar.getDBO(),1,varContainer.savVar.getLanguage());
+			DBC.getTranslation(varContainer.getSavVar().getDBO(),1,varContainer.getSavVar().getLanguage());
 
 			System.out.printf("3.");
-			DBC.getTranslation(varContainer.savVar.getDBO(),2,varContainer.savVar.getLanguage());
+			DBC.getTranslation(varContainer.getSavVar().getDBO(),2,varContainer.getSavVar().getLanguage());
 			
 			System.out.printf("4.");
-			DBC.getTranslation(varContainer.savVar.getDBO(),3,varContainer.savVar.getLanguage());
+			DBC.getTranslation(varContainer.getSavVar().getDBO(),3,varContainer.getSavVar().getLanguage());
     		
 			System.out.println("5. SQL TESTFUNKTION");
 			   System.out.println();
 			
-			   DBC.getTranslation(varContainer.savVar.getDBO(),4,varContainer.savVar.getLanguage());
+			   DBC.getTranslation(varContainer.getSavVar().getDBO(),4,varContainer.getSavVar().getLanguage());
 	    
-			   DBC.getTranslation(varContainer.savVar.getDBO(),5,varContainer.savVar.getLanguage());
+			   DBC.getTranslation(varContainer.getSavVar().getDBO(),5,varContainer.getSavVar().getLanguage());
 	    		
 		    Scanner sc = new Scanner(System.in);
 		    String  eingabe = sc.next();
@@ -74,12 +74,12 @@ public class freakyWecker {
 		    		{
 		    			
 		    		}
-		    				varContainer.savVar = useSettings.runSettings();
+		    				varContainer.setSavVar(useSettings.runSettings());
 		    				
 		    				//System.out.println("Test größe nach laden: "+varContainer.savVar.sizeOfEndTimes());
-				    		for (int i = 0;i<varContainer.savVar.sizeOfEndTimes();i++)
+				    		for (int i = 0;i<varContainer.getSavVar().sizeOfEndTimes();i++)
 				    		{
-				    			long yourmilliseconds = varContainer.savVar.getEndTime(i);
+				    			long yourmilliseconds = varContainer.getSavVar().getEndTime(i);
 				    			SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm:ss");    
 				    			
 				    			sdf.setTimeZone(TimeZone.getTimeZone("Europe/Berlin"));
@@ -120,9 +120,9 @@ public class freakyWecker {
 		    			
 		    		}
 		    		
-		    		for (int i = 0;i<varContainer.savVar.sizeOfEndTimes();i++)
+		    		for (int i = 0;i<varContainer.getSavVar().sizeOfEndTimes();i++)
 		    		{
-		    			long yourmilliseconds = varContainer.savVar.getEndTime(i);
+		    			long yourmilliseconds = varContainer.getSavVar().getEndTime(i);
 		    			SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm:ss");    
 		    			
 		    			sdf.setTimeZone(TimeZone.getTimeZone("Europe/Berlin"));
@@ -131,7 +131,7 @@ public class freakyWecker {
 		    			Date resultdate = new Date(yourmilliseconds);	
 		    		}
 		    		parser = new XMLReadWrite();
-		    		parser.writeXML(varContainer.savVar);
+		    		parser.writeXML(varContainer.getSavVar());
 		    		System.exit(0);
 		    		break;
 		    	case"4":
@@ -154,7 +154,7 @@ public class freakyWecker {
 		    		break;
 		    	case"5":
 		    		DBC = new DBConnect();
-		    		DBC.getTranslation(varContainer.savVar.getDBO(),0,varContainer.savVar.getLanguage());
+		    		DBC.getTranslation(varContainer.getSavVar().getDBO(),0,varContainer.getSavVar().getLanguage());
 		    		break;
 		    	default : 
 		    		break;
